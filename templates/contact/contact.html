@@ -1,0 +1,106 @@
+{% extends 'part/base.html' %}
+{%load static %}
+{% block content1 %} جمعية البر والخدمات الاجتماعية{%endblock%}
+{%  block content %}
+
+
+   {% if messages %}
+        {% for msg in messages%}
+        <div class="alert alert-succes" role="alert" style="width:25%,">
+            <h4  style="text-align:center" class="alert-heading">أهلا بك </h4>
+           <p style="text-align:center"> {{msg}}</p>
+
+            {% endfor%}</div>
+        {% endif%}
+            {% for x1 in x%}
+                     <div class="col-md-12">
+                          <h6>اسم المستفيد</h6>
+                         <p>
+                         {{x1.pername}}
+                         </p>
+                           <h6> الرقم الوطني</h6>
+                         <p>
+
+                         {{x1.id_number}}
+                         </p>
+                     </div>{% endfor%}
+
+
+<section id="contact" class="contact">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>تواصل</h2>
+                <p>تواصل مع المستفيدين</p>
+            </header>
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6">
+
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-geo-alt"></i>
+                                <h3>العنوان</h3>
+                                <p>حمص<br>الدبلان</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-telephone"></i>
+                                <h3>اتصل بنا</h3>
+                                <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-envelope"></i>
+                                <h3>Email </h3>
+                                <p>albirr2000albir@gmail.com<br></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-clock"></i>
+                                <h3>أوقات العمل</h3>
+                                <p>كل الأيام ماعدا الجمعة<br></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <form  method="POST"  >
+                       {% csrf_token %}
+                        <div class="row gy-4">
+
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="subject"  placeholder="Subject" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                            </div>
+
+                            <div>
+                                <button name='btnsign' type="submit">Send Message</button>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- End Contact Section -->
+
+
+{% endblock%}

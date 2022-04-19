@@ -1,0 +1,183 @@
+{% extends 'part/base.html'%}
+{% load static %}
+{% block content1 %}  كفالة طالب العلم {% endblock %}
+
+{% block content %}
+{% if messages %}
+        {% for msg in messages%}   <br>  <br>  <br>
+        <div class="alert alert-info" role="alert" style="width:25%,">
+
+      <h4  style="text-align:center" class="alert-heading">أهلا بك </h4>
+       <p style="text-align:center"> {{msg}}</p>
+        {% endfor%}</div>
+        {% endif%}
+
+
+
+
+
+
+ <div class="page-content" style="background-image: url('{% static 'img/social.jpg' %} ')">
+        <div class="wizard-v1-content">
+            <div class="wizard-form">
+                <form class="form-register" id="form-register" method="POST"enctype="multipart/form-data">
+                      {% csrf_token %}
+
+                    <div id="form-total">
+                        <!-- SECTION 1 -->
+                        <h2>
+                            <span class="step-icon"><i class="zmdi zmdi-account"></i></span>
+                            <span class="step-number">الخطوة 1</span>
+                            <span class="step-text">المعلومات الأساسية</span>
+                        </h2>
+                        <section dir="rtl">
+                            <div class="inner">
+                                <div class="form-row">
+                                    <div class="form-holder">
+                                        <label for="name">الاسم والكنية</label>
+                                        <input type="text" placeholder=" الاسم والكنية" class="form-control" id="name" name="name"  value="{{name}}" required>
+                                    </div>
+                                    <div class="form-holder">
+                                        <label for="email">الايميل</label>
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="aaaa@gmail.com" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-holder">
+                                        <label for="fname">اسم الأب</label>
+                                        <input type="text" placeholder="اسم الأب" class="form-control" id="fname" name="fname" required>
+                                    </div>
+                                    <div class="form-holder">
+                                        <label for="iid">الرقم الوطني</label>
+                                        <input type="number" placeholder="الرقم الوطني" class="form-control" name="iid" id="iid" required/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-holder">
+                                        <label for="mname">اسم و كنية الأم</label>
+                                        <input type="text" placeholder="اسم و كنية الأم" class="form-control" id="mname" name="mname" required>
+                                    </div>
+                                    <div class="form-holder">
+                                        <label for="berithday">المواليد</label>
+                                        <input type="date" placeholder="المواليد" class="form-control" name="berithday" id="berithday" required/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-holder">
+                                        <label for="phone1">رقم الأرضي</label>
+                                        <input type="tel" placeholder="الرقم الأرضي" class="form-control" name="phone1" id="phone1" />
+                                    </div>
+                                    <div class="form-holder">
+                                        <label for="phone2">رقم الموبايل</label>
+                                        <input type="tel" placeholder="الرقم الموبايل" class="form-control" name="phone2" id="phone2" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-holder">
+                                        <label for="gender">الجنس</label>
+                                        <select name="gender" id="gender" class="form-control">
+											<option  name="gender"  value="ذكر">ذكر</option>
+											<option  name="gender" value="انثى" >انثى</option>
+										</select>
+                                    </div>
+                                    <div class="form-holder">
+                                        <label for="address">العنوان بالتفصيل</label>
+                                        <input type="text" name="address" class="form-control" id="address" placeholder="حمص , الوعر, شارع الفردوس" required>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </section>
+                        <!-- SECTION 2 -->
+                        <h2>
+                            <span class="step-icon"><i class="zmdi zmdi-card"></i></span>
+                            <span class="step-number">الخطوة 2</span>
+                            <span class="step-text">الوثائق المطلوبة</span>
+                        </h2>
+                        <section dir="rtl">
+                            <div class="inner">
+                                <div class="form-row">
+                                    <div class="form-holder">
+                                        <label for="f1">صورة الهوية</label>
+                                        <input type="file" name="f1" class="form-control" id="f1" required>
+                                    </div>
+                                    <div class="form-holder">
+                                        <label for="f2">بيان عائلي</label>
+                                        <input type="file" name="f2" class="form-control" id="f2" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-holder">
+                                        <label for="f3">صورة البطاقة الجامعية</label>
+                                        <input type="file" name="f3" class="form-control" id="f3" required>
+                                    </div>
+                                    <div class="form-holder">
+                                        <label for="f4">عقد ايجار المنزل</label>
+                                        <input type="file" name="f4" class="form-control" id="f4" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-holder">
+                                        <label for="f5">رسم التسجيل</label>
+                                        <input type="file" name="f5" class="form-control" id="f5" required>
+                                    </div>
+                                    <div class="form-holder">
+                                        <label for="f6">وثيقة غير موظف</label>
+                                        <input type="file" name="f6" class="form-control" id="f6" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-holder">
+                                        <label for="f1">وثيقة دوام</label>
+                                        <input type="file" name="f7" class="form-control" id="f7" required>
+                                    </div>
+                                    <div class="form-holder">
+                                        <label for="f8">أوراق الجامعة</label>
+                                        <input type="file" name="f8" class="form-control" id="f8" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- SECTION 3 -->
+                        <h2>
+                            <span class="step-icon"><i class="zmdi zmdi-receipt"></i></span>
+                            <span class="step-number">الخطوة 3</span>
+                            <span class="step-text">تحقق من البيانات</span>
+                        </h2>
+                        <section dir="rtl">
+                            <div class="inner">
+                                <h3></h3>
+                                <div class="form-row table-responsive">
+                                    <table class="table" dir="rtl">
+                                        <tbody>
+                                            <tr class="space-row">
+                                                <th>الاسم والكنية</th>
+                                                <td id="username-val"></td>
+                                            </tr>
+
+                                            <tr class="space-row">
+                                                <th>Email Address:</th>
+                                                <td id="email-val"></td>
+                                            </tr>
+                                            <tr class="space-row">
+                                                <th>الرقم الوطني</th>
+                                                <td id="card-number"></td>
+                                            </tr>
+                                            <tr class="space-row">
+                                                <th>رقم الموبايل</th>
+                                                <td id="phone"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <input type="submit" name="btnsign" class="btn btn-primary align-content-end" value="ارسال">
+                        </section>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock%}

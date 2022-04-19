@@ -1,0 +1,225 @@
+{%extends 'part/base.html' %}
+{%load static%}
+{% block content1 %} جمعية البر والخدمات الاجتماعية{%endblock%}
+{% block content %}
+
+ <section id="hero" class="hero d-flex align-items-center" dir="rtl">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">جمعية البر و الخدمات الاجتماعية</h1><i class="bi bi-check-square"></i>
+          <h2 data-aos="fade-up" data-aos-delay="400">لنصل إلى مجتمع خال من الفقر والجهل والمرض
+        </h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="{% url 'sservices'%}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span> خدماتنا </span>
+                    <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{%static 'img/f.jpg' %}" class="img-fluid" alt="">
+      </div>
+    </div>
+
+    </div>
+  </section><!-- End Hero -->
+
+
+
+      <!-- ======= Advertisement Section ======= -->
+      <section id="testimonials" class="testimonials">
+
+        <div class="container" data-aos="fade-up">
+
+          <header class="section-header">
+            <p>الاعلانات</p>
+          </header>
+
+          <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
+            <div class="swiper-wrapper">
+                   {% for ad1 in ad|slice:':4'  %}
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="profile mt-auto">
+                    <img src="{{ad1.photo.url}}" class="testimonial-img" alt="" height="200px" width="200px">
+                    <h3>{{ad1.title}}</h3>
+                    </div>
+                  <p>
+                       {{ad1.details}}
+                  </p>
+                </div>
+              </div><!-- End testimonial item -->
+ {% endfor %}
+
+
+            </div>
+            </div>
+
+        </div>
+
+      </section><!-- End Advertisement Section -->
+
+
+
+<section id="counts" class="counts">
+    <div class="container" data-aos="fade-up">
+        <header class="section-header">
+            <p>إحصائيات لبعض المشاريع</p>
+          </header>
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="count-box">
+            <img src=" {% static 'img/insurance.png' %}" alt="" width="60px">
+            <div>
+              <span data-purecounter-start="0" data-purecounter-end="525" data-purecounter-duration="1" class="purecounter"></span>
+              <p dir="rtl">عائلة فقيرة مسجلة في الجمعية تحت الدعم</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <img src="{%  static 'img/family.png' %}" alt="" width="60px">
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1" class="purecounter"></span>
+                <p dir="rtl">عائلة سنوياً تستفيد من مبادرة إفطار صائم في رمضان </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <img src="{% static 'img/d.png' %}" alt="" width="60px">
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1" class="purecounter"></span>
+                <p dir="rtl">متوفى تساهم الجمعية بتكاليف دفنهم سنوياً</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <img src="{% static 'img/community.png' %}" alt="" width="60px">
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="31600" data-purecounter-duration="1" class="purecounter"></span>
+                <p dir="rtl">عدد المستفيدين من مبادرات إفطار صائم سنوياً</p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Counts Section -->
+
+    <div class="container" >
+
+      <div class="row">
+
+        <div class="col-lg-12" >
+          <div class="box">
+           {{ m|safe}}
+          </div>
+        </div></div></div></section>
+
+
+    {% if messages %}
+        {% for msg in messages%}
+        <div class="alert alert-succes" role="alert" style="width:25%,">
+            <h4  style="text-align:center" class="alert-heading">أهلا بك </h4>
+           <p style="text-align:center"> {{msg}}</p>
+
+            {% endfor%}</div>
+        {% endif%}
+
+
+<section id="contact" class="contact">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>تواصل</h2>
+                <p>تواصل معنا</p>
+            </header>
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6">
+
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-geo-alt"></i>
+                                <h3>العنوان</h3>
+                                <p>حمص<br>الدبلان</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-telephone"></i>
+                                <h3>اتصل بنا</h3>
+                                <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-envelope"></i>
+                                <h3>Email </h3>
+                                <p>albirr2000albir@gmail.com<br></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-clock"></i>
+                                <h3>أوقات العمل</h3>
+                                <p>كل الأيام ماعدا الجمعة<br></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <form  method="POST"  >
+                       {% csrf_token %}
+                        <div class="row gy-4">
+ <div class="col-md-6">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="subject"  placeholder="Subject" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                            </div>
+
+                            <div>
+                                <button name='btnsign' type="submit">Send Message</button>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- End Contact Section -->
+
+
+{% endblock%}

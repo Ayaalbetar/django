@@ -1,0 +1,9 @@
+NAMe:
+<br>{{name1}}
+<br><br>
+EMAIL:
+<br>{{email1}}
+<br><br>
+<img src="{{namebar }}">
+SUBJECT:
+<br>{{subject}}

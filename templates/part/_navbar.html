@@ -1,0 +1,48 @@
+{% load static%}
+
+
+
+ <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'iindex' %}" class="logo d-flex align-items-center">
+        <img src="{% static 'img/loogo.png' %}" alt="">
+        <span>جمعية البر </span>
+      </a>
+
+      <nav id="navbar" class="navbar" >
+        <ul dir="rtl">
+            {%if '/' == request.path %}
+          <li><a class="nav-link scrollto active" href="{% url 'iindex' %}">الصفحة الرئيسية</a></li>
+      {% else %}
+            <li><a class="nav-link scrollto " href="{% url 'iindex' %}">الصفحة الرئيسية</a></li>
+          {% endif%}
+            {% if  request.path == '/services'  %}
+             <li >
+                   <a class="nav-link scrollto  active " href="{% url 'sservices' %}">خدماتنا</a></li>
+            {% else %}
+          <li >
+               <a class="nav-link scrollto  " href="{% url 'sservices' %}">خدماتنا</a></li>
+           {% endif %}
+
+         <!--<li><a href="blog.html">Blog</a></li>-->
+            {% if  request.path == '/about'  %}
+          <li class="dropdown"><a  active href=""><span>عن الجمعية</span> <i class="bi bi-chevron-down"></i></a>
+            {% else %}
+            <li class="dropdown"><a   active href=""><span>عن الجمعية</span> <i class="bi bi-chevron-down"></i></a>
+              {% endif %}
+            <ul>
+              <li><a href="{% url 'about'%}">تاريخ الجمعية</a></li>
+              <li><a href="{% url 'projects'%}">مشاريع و إنجازات</a></li>
+
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">طرق التبرع</a></li>
+          <li><a class="nav-link scrollto" href="/admin">لوحة التحكم
+          </a></li>
+                </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->

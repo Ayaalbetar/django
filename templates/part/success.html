@@ -1,0 +1,22 @@
+{% extends 'part/base.html' %}
+{%  load static %}
+{% block content %}
+<br><br><br><br><br><br>
+<section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+        <div   class="text-center">
+          <h3>أهلا بك</h3>
+             {% if messages %}
+        {% for msg in messages%}
+        <div class="alert alert-succes" role="alert" style="width:25%,">
+
+
+       <p style="text-align:center" > {{msg}}</p>
+        {% endfor%}</div>
+        {% endif%}
+          <a class="cta-btn" href="{%  url 'sservices' %}">عودة لصفحة الخدمات</a>
+        </div>
+      </div>
+    </section>
+<br><br><br>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'part/base.html'%}
+{%load static%}
+{% block content1 %} خدماتنا {%endblock%}
+{% block content %}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- ======= Services Section ======= -->
+<section id="services" class="services" xmlns="http://www.w3.org/1999/html">
+<br><br><br>
+        <div class="container"  data-aos="fade-up">
+
+            <header class="section-header">
+                <p>اختر الخدمة التي تحتاجها</p>
+            </header>
+            <div class="row gy-4">
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-box blue">
+                        <i class="icon"><img src="{% static 'img/de.jpg' %}" class="img-fluid " alt=" "></i>
+                        <h3>دعم اجتماعي</h3>
+                        <p>تعمل جمعية البر من خلال مشاريع لجنة الدعم الاجتماعي على دعم العائلات الفقيرة الأشد ضعفاً وعائلات الأيتام مالياً وصحياً وغذائياً ولوجستياً، كما تكفل طلاب العلم الجامعيين من العائلات الفقيرة، وتكفل نفقات دفن الموتى للمحتاجين.</p>
+                        <nav id="ch1" class="navbar">
+                            <ul>
+                                <li class="dropdown">
+                                        <span>سجل الآن</span> <i class=" bi bi-chevron-right "></i>
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'student'%} ">طالب علم جامعي</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'orphan'%} ">كفالة يتيم</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'family'%} ">عائلة كريمة</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'medican'%}">دواء دائم</a>
+                                        </li>
+                                        <li>
+                                            <a href="{%url 'patient'%} ">بطاقة صحية</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 " data-aos="fade-up " data-aos-delay="300 ">
+                    <div class="service-box red ">
+                      <a href="{% url 'allhos'%}">  <i class="icon "><img src="{% static 'img/lll.jpg' %} " height="50px " width="50px " class=" " alt=" "></i>
+                        <h3>المستشفى</h3>
+                          <p>يمكنك الاستعلام و الحجز ضمن المؤسسات الطبية التي تتبع لجمعية البر</p></a>
+                        <a href="{% url 'allhos'%}" class="read-more "><span>سجل الآن</span> <i class="bi bi-arrow-right "></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 " data-aos="fade-up " data-aos-delay="400 ">
+                    <div class="service-box green ">
+                        <a href="{% url 'basket'%}">
+                        <i class="icon "><img src="{% static 'img/bask.png' %} " height="70px " width="70px " class="img-fluid " alt=" "></i>
+                        <h3>السلة الغذائية</h3>
+                        <p>استجابةً للأزمة التي حلت بالبلاد، قُدمت السلل الغذائية للأسر المتضررة والأشد حاجةً وفقراً، وقُدمت مادة زبدة الفستق للأطفال.</p>
+                      </a>  <a href="{% url 'basket'%}" class="read-more "><span>سجل الآن</span> <i class="bi bi-arrow-right "></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <br><br><br><br><br><br>
+    </section>
+    <!-- End Services Section -->
+
+
+
+{% endblock%}
